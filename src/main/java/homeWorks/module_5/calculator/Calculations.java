@@ -1,9 +1,9 @@
-package main.java.homeWorks.module_5.calculator;
+package homeWorks.module_5.calculator;
 
 public class Calculations {
     public static void main(String[] args) {
 
-        BaseCalculations calculator = new Calculator();
+        BaseCalculations calculator = new BaseCalculations();
         Float sum = BaseCalculations.getSum(10, 20);
         Float div = BaseCalculations.getDivision(20, 10);
         Float multiple = BaseCalculations.getMultiplication(40, 50);

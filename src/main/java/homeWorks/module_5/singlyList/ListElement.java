@@ -1,14 +1,16 @@
-package main.java.homeWorks.module_5.singlyList;
+package homeWorks.module_5.singlyList;
 
-public class ListElement {
+public class ListElement<T> {
+
     private ListElement next;
-    private int data;
+    private ListElement prev;
+    private T data;
 
-    public int getData() {
+    public T getData() {
         return data;
     }
 
-    public ListElement(int data) {
+    public ListElement(T data) {
         this.data = data;
     }
 
@@ -18,5 +20,13 @@ public class ListElement {
 
     public void setNext(ListElement next) {
         this.next = next;
+    }
+
+    public ListElement getPrev() {
+        return prev;
+    }
+
+    public void setPrev(ListElement prev) {
+        this.prev = prev;
     }
 }

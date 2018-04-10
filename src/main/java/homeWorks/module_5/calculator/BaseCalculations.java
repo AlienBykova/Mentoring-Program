@@ -1,4 +1,4 @@
-package main.java.homeWorks.module_5.calculator;
+package homeWorks.module_5.calculator;
 
 import java.util.Stack;
 
