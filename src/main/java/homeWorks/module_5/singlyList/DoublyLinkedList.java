@@ -4,7 +4,7 @@ public class DoublyLinkedList {
     private ListElement head;
     private ListElement tail;
 
-    public void addFront(Object data) {
+    public <T> void addFront(T data) {
         ListElement element = new ListElement(data);
         if (head == null) {
             head = element;
@@ -16,7 +16,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public void addBack(Object data) {
+    public <T> void addBack(T data) {
         ListElement element = new ListElement(data);
         if (tail == null) {
             head = element;
@@ -36,7 +36,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public void del(Object data) {
+    public <T> void del(T data) {
         if (head == null) return;
 
         else if (head == tail) {
