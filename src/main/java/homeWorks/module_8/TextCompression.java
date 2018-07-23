@@ -9,8 +9,9 @@ public class TextCompression {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String word = scan.next();
-        System.out.println(zip(word));
-        String w = unzip(word);
+        String g = zip(word);
+        System.out.println(zip(g));
+        String w = unzip(g);
         System.out.println(w);
     }
 
@@ -34,19 +35,13 @@ public class TextCompression {
     }
 
     private static String unzip(String word) {
-        Pattern pattern1 = Pattern.compile("1\\d[2-9]");
+        Pattern pattern1 = Pattern.compile("1\\d");
         Matcher matcher1 = pattern1.matcher(word);
 
         Pattern pattern2 = Pattern.compile("(\\D[2-9])");
         Matcher matcher2 = pattern2.matcher(word);
 
         String tmp;
-        while (matcher1.find()) {
-            tmp = "";
-            String letter = matcher1.group(0).substring(1);
-            tmp = letter;
-            word = word.replaceFirst("1\\d[2-9]", tmp);
-        }
 
         while (matcher2.find()) {
             tmp = "";
@@ -56,6 +51,14 @@ public class TextCompression {
                 tmp += letter;
             word = word.replaceFirst("(\\D[2-9])", tmp);
         }
+
+        while (matcher1.find()) {
+            tmp = "";
+            String letter = matcher1.group(0).substring(1);
+            tmp = letter;
+            word = word.replaceFirst("1\\d", tmp);
+        }
+
         return word;
     }
 }
